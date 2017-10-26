@@ -75,6 +75,7 @@ header ul li a { /* for links we need additional styling */
 	-webkit-border-radius: 50px;
 	border-radius: 250px;
 	margin: 0 auto;
+	opacity: 0.7;
 }
 
 .about p {
@@ -91,6 +92,34 @@ header ul li a { /* for links we need additional styling */
 	padding:15px;
 
 }
+
+.statement {
+	padding: 100px 0; 
+	background-size: cover;
+	background-color: #fff;
+}
+.statement h1 {
+	font-family: 'Questrial', sans-serif;
+	letter-spacing: 3px;
+	text-align: center;
+	font-size: 40pt;
+	margin-bottom: 50px;
+	color:#000;
+}
+
+.statement p {
+	font-family: 'Lato', sans-serif; /* RH EDIT*/
+	font-weight: 400;
+	text-align: left;
+	font-size: 20px;
+	margin:0 auto;
+	margin-top: 70px;
+	max-width: 650px;
+	color:#000;
+	padding:15px;
+
+}
+
 
 .usefullinks {
 	background-color: #ECF0F1;
