@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#exhibit {
+    height: 250px;
+    width: 250px;
+    overflow: auto;
+}
+
+#content {
+    height: 800px;
+    width: 2000px;
+    background-color: coral;
+}
+
+#mySidenav a {
+    position: absolute;
+    right: -5px;
+    transition: 0.3s;
+    padding: 10px;
+    width: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 3px 0px 0px 3px;
+    opacity: 0.3;
+}
+
+#mySidenav a:hover {
+    right: 0;
+}
+
+
+#scroll {
+    bottom: 20px;
+    background-color: #555
+}
+
+</style>
+</head>
+
+<body>
+
+
+<p>This example demonstrates how to assign an "onclick" event to a p element.</p>
+
+<p id="demo" onclick="myFunction()">Click me.</p>
+
+<div id="exhibit">
+  <div id="content">
+    Some text inside a div element.<br><br>
+    Some text inside a div element.
+  </div>
+</div>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    var elmnt = document.getElementById("exhibit");
+    elmnt.scrollLeft += 100;
+}
+</script>
+
+
+</body>
+</html>
+

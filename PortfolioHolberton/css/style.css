@@ -6,7 +6,7 @@
 	padding: 0;
 }
 
-a:hover {
+header a:hover {
     background-color: yellow;
 }
 
@@ -30,7 +30,6 @@ header {
 	font-weight:800;
 	color:#fff;
 	z-index: 3; /* to bring the layer on top for the arrangement */
-
 }
 
 header ul {
