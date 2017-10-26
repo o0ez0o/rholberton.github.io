@@ -54,8 +54,10 @@ $(document).ready(function()
 
 <!-- Dropdown Menu Lists Begin Here -->
 <ul class="section" id="section_1">
-<li>  <span style="display:block; margin-left:1em" class="menu_title"> Gail Wight</span></li>
-<li>  <span style="display:block; margin-left:1em" class="menu_title"> Works 2011-2017</span></li>
+<div class="menu_title"> 
+  <h1> Gail Wight </h1>
+  <h2> Works 2011-2017</h2>
+</div>
 <p>&nbsp;</p>
 <li>  <span style="display:block; margin-left:1em"> <span id="section_title_1" class="section_title">Cerulean Blues</span>
 <ul style="display: block;"> <span style="display:block; margin-left:1em">
@@ -130,14 +132,21 @@ $(document).ready(function()
       <div id="img-container">
 
         <!-- Image: Landscape-->
-        <div id="node120" class="picture" style="width: 450px;"><!-- change width here -->
-          <div class="captioning text2" style="width: 450; height: 18px;">
-            <div style="padding: 0 10px 0 0;">Abandon 1</div>
+            <div id="node120" class="picture" style="width: 450px;"><!-- change width here -->
+          <div class="captioning text2" style="width: 450px; height: 18px;">
+            <div style="padding: 0 10px 0 0;">Installation View, Hosfelt Gallery</div>
           </div>
-          <div> <img src="../Wight_Images/Abandon/GWight_Abandon1_2011-1S.jpg" width="450" height="600" alt=""></div>
+          <div> 
+            <a class="lightbox" href="#abandon"> 
+              <img src="../Wight_Images/Abandon/GWight_Abandon1_2011-1S.jpg" width="400" height="600" alt="">
+            </a>
+          </div>
         </div>
-        <div class="separator" style="float: left; width: 25px;">&nbsp;
-              </div>
+        <div class="separator" style="float: left; width: 25px;">&nbsp;</div>
+        <div class="lightbox-target" id="abandon">
+           <img src="../Wight_Images/Abandon/GWight_Abandon1_2011-1L.jpg"/>
+           <a class="lightbox-close" href="#"></a>
+        </div>
       <!-- Project Title and Text -->
       <div id="node120" class="picture" style="width: 500px;">
         <div class="captioning text2" style="width: 500px; height: 18px;">
