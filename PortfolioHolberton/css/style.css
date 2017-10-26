@@ -6,6 +6,14 @@
 	padding: 0;
 }
 
+a:hover {
+    background-color: yellow;
+}
+
+a:visited {
+    color: pink;
+}
+
 body {
 	width: 100%;
 	height: 100%;
