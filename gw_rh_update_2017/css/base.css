@@ -21,7 +21,7 @@ object { display: block; }
 #img-container span.backgrounded a,
 #img-container a.thickbox, 
 #img-container a.thumb-img, 
-#img-container #d-col1 a { background: transparent; }
+#img-container #d-col1 a { background: }
 
 /* not recommended for change */
 #index {
