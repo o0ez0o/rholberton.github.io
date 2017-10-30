@@ -2,10 +2,12 @@
 <html>
 
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
 #exhibit {
     height: 250px;
-    width: 250px;
+    width: 100%;
+/*    overflow: hidden;*/
     overflow: auto;
 }
 
@@ -16,8 +18,9 @@
 }
 
 #mySidenav a {
-    position: absolute;
+    position: fixed;
     right: -5px;
+    bottom: 1em;
     transition: 0.3s;
     padding: 20px;
     width: 15px;
@@ -34,7 +37,7 @@
 
 
 #scroll {
-    bottom: 20px;
+    bottom: 1em;
     background-color: #555
 }
 
@@ -45,7 +48,7 @@
 
 
 <p>This example demonstrates how to assign an "onclick" event to a p element.</p>
-<p id="demo" onclick="myFunction()">Click me.</p>
+<!-- <p id="demo" onclick="myFunction()">Click me.</p> -->
 
 <div id="mySidenav" class="sidenav" onclick="myFunction()">
   <a href="#" id="scroll">></a>
@@ -56,11 +59,23 @@
     Some text inside a div element.<br><br>
     Some text inside a div element.
   </div>
+
+    <div id="content">
+    Some text inside a div element.<br><br>
+    Some text inside a div element.
+  </div>
+
+    <div id="content">
+    Some text inside a div element.<br><br>
+    Some text inside a div element.
+  </div>
+
 </div>
 
 <script>
+
 function myFunction() {
-    document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    // document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
     var elmnt = document.getElementById("exhibit");
     elmnt.scrollLeft += 100;
 }

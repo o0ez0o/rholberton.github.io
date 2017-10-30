@@ -127,8 +127,7 @@ $(document).ready(function()
       <!-- -->
     </div>
     <!-- text and image -->
-    <div id="img-container">
-      <div id="img-container">
+    <div id="img-container"
 
         <!-- Image: Landscape-->
         <div id="node120" class="picture" style="width: 450px;"><!-- change width here -->
@@ -190,17 +189,37 @@ $(document).ready(function()
       <div class="separator" style="float: left; width: 25px;">&nbsp; </div>
       <div class="separator" style="float: left; width: 160
 px;">&nbsp;</div>
-      <div style="clear: left;">
-        <!-- -->
+          <div style="clear: left;">
+            <!-- -->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 <!-- InstanceEndEditable -->
 <!-- end text and image -->
 
+<!-- SCROLL ARROW -->
+
+  <div id="mySidenav" class="sidenav" onclick="myFunction()">
+  <a href="#" id="scroll">></a>
+  </div>
+
+<!-- <p id="demo" onclick="myFunction()">Click me.</p> -->
+
+<script>
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    var elmnt = document.getElementById("body");
+    elmnt.scrollLeft += 100;
+}
+</script>
+
 </div>
-</div>
+
+
+
 
 <script type="text/javascript">do_statistics();</script>
 
