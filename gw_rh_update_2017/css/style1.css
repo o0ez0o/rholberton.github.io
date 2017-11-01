@@ -242,15 +242,6 @@ h4 { font-size: 13px; }
 a.lightbox img {
 }
 
-$('.lightbox').lightbox({
-padding: 0,
-helpers: {
-    overlay: {
-    locked: false
-    }
-}
-});
-
 /* Styles the lightbox, removes it from sight and adds the fade-in transition */
 
 .lightbox-target {
