@@ -118,7 +118,7 @@ a img { border: none; }
 
 #exhibit {
     height: 100%;
-    width: 110%;
+    width: auto;
     margin: 62px 0 0 310px;
     /*margin: 15% 0 3% 265px;*/
     top: 0;
@@ -349,6 +349,12 @@ a.lightbox-close:after {
 
 
 /* ARROW TO THE RIGHT */
+
+#scroll-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
 
 #mySidenav a {
     position: fixed;
