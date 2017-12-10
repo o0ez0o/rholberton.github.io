@@ -94,7 +94,7 @@
                         <ul style="display: block;"> <span style="display:block; margin-left:1em">
                             <li class="exhibit_title"><a href="resume.html">Resume</a></li>
                             <li class="exhibit_title"><a href="publications.html">Publications</a></li>
-                            <li class="exhibit_title"><a href="http://www.stanford.edu/~gailw" target="_blank">Main Website</a></li>
+                            <li class="exhibit_title"><a href="http://www.stanford.edu/~gailw" target="_blank">Website</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -105,7 +105,6 @@
         <!--MENU END-->
                 
         <!-- PUBLICATIONS BEGIN -->
-    <div id="scroll-container">
         <div id="exhibit-pub">
             <div class="container">
                 <div class="top">
@@ -711,26 +710,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
                 <!-- InstanceEndEditable -->
                 <!-- end text and image -->
 
-        <!-- SCROLL ARROW BEGIN -->
-        <div id="mySidenav" class="sidenav" onclick="myFunction()">
-            <a href="#copepod#img" id="scroll">></a>
-        </div>
-        <!-- <p id="demo" onclick="myFunction()">Click me.</p> -->
-        <script>
-            function myFunction() {
-                var elmnt = document.getElementById("scroll-container");
-                elmnt.scrollLeft += 100;
-            }
-        </script>
-        <!-- SCROLL ARROW END -->
+                <!-- SCROLL ARROW -->
+
+                <div id="mySidenav" class="sidenav" onclick="myFunction()">
+                    <a href="#" id="scroll">></a>
+                </div>
+
+                <!-- <p id="demo" onclick="myFunction()">Click me.</p> -->
+
+                <script>
+
+                    function myFunction() {
+                        document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+                        var elmnt = document.getElementById("body");
+                        elmnt.scrollLeft += 100;
+                    }
+                </script>
 
 
                 <script type="text/javascript">do_statistics();</script>
 
-    </body>
-                        <!-- InstanceEnd -->
+    </body><!-- InstanceEnd -->
 </html>
