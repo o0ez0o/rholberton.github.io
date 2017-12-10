@@ -94,7 +94,7 @@
                         <ul style="display: block;"> <span style="display:block; margin-left:1em">
                             <li class="exhibit_title"><a href="resume.html">Resume</a></li>
                             <li class="exhibit_title"><a href="publications.html">Publications</a></li>
-                            <li class="exhibit_title"><a href="http://www.stanford.edu/~gailw" target="_blank">Website</a></li>
+                            <li class="exhibit_title"><a href="http://www.stanford.edu/~gailw" target="_blank">Main Website</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -104,7 +104,7 @@
             </div>
         <!--MENU END-->
                 
-        <!-- PROJECT DOCUMENTATION BEGINS -->
+        <!-- PROJECT DOCUMENTATION BEGINS -->  <div id="scroll-container">
         <div id="exhibit">
             <div class="container">
                 <div class="top">
@@ -117,19 +117,19 @@
                         <!-- Image/Caption Begin-->
                             <div id="node120" class="picture" style="width: 450px;"><!-- change width here -->
                               <div class="captioning text2" style="width:450px; height:18px;">
-                                <div style="padding: 0 10px 0 0;"><em>Cerulean Blues</em> at the Stanford Art Gallery</div>
+                                <div style="padding: 0 10px 0 0;"><em>Cerulean Blues</em> detail</div>
                               </div>
                             <div> 
                                 <a class="lightbox" href="#cblues01"> 
-                                    <img src="../Wight_Images/Cerulean/GWight_CeruleanBlues_-2017_1S.jpg">
+                                    <img src="../Wight_Images/Cerulean/GWight_CeruleanBlues_-2017_1S.jpg" name="cblues#img">
                                 </a>
                             </div>
                         </div>
                         <!-- Image/Caption End-->
                         <!-- Large Image on Click Begin -->
                         <div class="lightbox-target" id="cblues01">
-                            <img src="../Wight_Images/Flyland/GWight_LandoftheFlies_1stSt_2014_S.jpg"/>
-                            <a class="lightbox-close" href="#"></a>
+                            <img src="../Wight_Images/Cerulean/GWight_CeruleanBlues_-2017_1L.jpg"/>
+                            <a class="lightbox-close" href="#cblues#img"></a>
                         </div>
                         <!-- Large Image on Click End -->
                         <div class="separator" style="float: left; width: 25px;">&nbsp;</div>
@@ -141,14 +141,14 @@
                               <div style="padding: 0 10px 0 0;">&nbsp;</div>
                             </div>
                             <div>
-                              <p class="caption">Cerulean Blues</p>
+							  <p class="caption"><em><b>Cerulean Blues</b></em></p>
                               <blockquote>
-                                <p class="caption">Pigment print on Arches Aquarelle rag<br>
+                                <p class="caption">pigment print on Arches Aquarelle rag<br>
                                   40” x 60”<br>
                                   2017<br>
                                 </p>
                               </blockquote>
-                              <p align="left" class="caption"><em>Cerulean Blues</em> is a 50 megapixel high resolution photograph catches the moment when a wave crashes up against the northern California coast, as it does every day, all day and all night long, as it has done for millions of years.<br><br>
+                              <p align="left" class="caption"><em>Cerulean Blues</em>, a 50 megapixel high resolution photograph, catches the moment when a wave crashes up against the northern California coast, as it does every day, all day and all night long, as it has done for millions of years.<br><br>
                                 
                             The image has been tinted to help me see, and to help me think. It’s easy to take the incessant ocean spray for granted, yet each crash is an ecstasy of uid dynamics, of minute paroxysms, of unstoppable motion. e shift in color also brings other liquids to mind, and suggests the vulnerability underlying this powerful force.
                                 
@@ -162,11 +162,11 @@
                         <!-- Image/Caption Begin-->
                         <div id="node120" class="picture" style="width: 450px;"><!-- change width here -->
                             <div class="captioning text2" style="width: 450px; height: 18px;">
-                                <div style="padding: 0 10px 0 0;">Caption</div>
+                                <div style="padding: 0 10px 0 0;"><em>Cerulean Blues</em></div>
                             </div>
                             <div> 
                                 <a class="lightbox" href="#cblues2"> 
-                                    <img src="../Wight_Images/Cerulean/GWight_CeruleanBlues_-2017_1L.jpg">
+                                    <img src="../Wight_Images/Cerulean/GWight_CeruleanBlues_2017_S.jpg">
                                 </a>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                         <!-- Large Image on Click Begin -->
                         <div class="lightbox-target" id="cblues2">
                             <img src="../Wight_Images/Cerulean/GWight_CeruleanBlues_2017_L.jpg"/>
-                            <a class="lightbox-close" href="#"></a>
+                            <a class="lightbox-close" href="#cblues#img"></a>
                         </div>
                         <!-- Large Image on Click End -->
                         <div class="separator" style="float: left; width: 25px;">&nbsp;</div>
@@ -185,8 +185,9 @@
                 </div>
             </div>
         </div>
-        <!-- PROJECT DOCUMENTATION ENDS -->
+        </div>     <!-- PROJECT DOCUMENTATION ENDS -->
 
+                        
         <!-- SCROLL ARROW BEGIN -->
         <div id="mySidenav" class="sidenav" onclick="myFunction()">
             <a href="#" id="scroll">></a>
@@ -194,12 +195,11 @@
         <!-- <p id="demo" onclick="myFunction()">Click me.</p> -->
         <script>
             function myFunction() {
-                document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-                var elmnt = document.getElementById("body");
+                var elmnt = document.getElementById("scroll-container");
                 elmnt.scrollLeft += 100;
             }
         </script>
-        <!-- SCROLL ARROW END -->
+        <!-- SCROLL ARROW END —>
 
         <script type="text/javascript">do_statistics();</script>
 

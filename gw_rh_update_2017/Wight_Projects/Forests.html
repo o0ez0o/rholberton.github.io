@@ -94,7 +94,7 @@
                         <ul style="display: block;"> <span style="display:block; margin-left:1em">
                             <li class="exhibit_title"><a href="resume.html">Resume</a></li>
                             <li class="exhibit_title"><a href="publications.html">Publications</a></li>
-                            <li class="exhibit_title"><a href="http://www.stanford.edu/~gailw" target="_blank">Website</a></li>
+                            <li class="exhibit_title"><a href="http://www.stanford.edu/~gailw" target="_blank">Main Website</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -104,7 +104,7 @@
             </div>
         <!--MENU END-->
                 
-        <!-- PROJECT DOCUMENTATION BEGINS -->
+        <!-- PROJECT DOCUMENTATION BEGINS -->  <div id="scroll-container">
         <div id="exhibit">
             <div class="container">
                 <div class="top">
@@ -117,11 +117,11 @@
                         <!-- Image/Caption Begin-->
                         <div id="node120" class="picture" style="width: 600px;"><!-- change width here -->
                             <div class="captioning text2" style="width: 600px; height: 18px;">
-                                <div style="padding: 0 10px 0 0;">N/A</div>
+								<div style="padding: 0 10px 0 0;"><em>Forests in the Age of Fishes</em></div>
                             </div>
                             <div> 
                                 <a class="lightbox" href="#forest01"> 
-                                    <img src="../Wight_Images/Forests/GWight_ForestsintheAgeofFishes_2011_S.jpg">
+                                    <img src="../Wight_Images/Forests/GWight_ForestsintheAgeofFishes_2011_S.jpg" name="forests-img">
                                 </a>
                             </div>
                         </div>
@@ -129,21 +129,21 @@
                         <!-- Large Image on Click Begin -->
                         <div class="lightbox-target" id="forest01">
                             <img src="../Wight_Images/Forests/GWight_ForestsintheAgeofFishes_2011_L.jpg"/>
-                            <a class="lightbox-close" href="#"></a>
+                            <a class="lightbox-close" href="#forests-img"></a>
                         </div>
                         <!-- Large Image on Click End -->
                         <div class="separator" style="float: left; width: 25px;">&nbsp;</div>
                     <!-- Individual Image End -->     
 
                     <!-- Project Title/Text Begins-->
-                        <div id="node120" class="picture" style="width: 600px;">
-                            <div class="captioning text2" style="width: 600px; height: 18px;">
+                        <div id="node120" class="picture" style="width: 500px;">
+                            <div class="captioning text2" style="width: 500px; height: 18px;">
                               <div style="padding: 0 10px 0 0;">&nbsp;</div>
                             </div>
                             <div>
-                              <p class="caption">Forests in the Age of Fishes</p>
+								<p class="caption"><em><b>Forests in the Age of Fishes</b></em></p>
                               <blockquote>
-                                <p class="caption">Burned drawing on handmade paper<br>
+                                <p class="caption">burned drawing on handmade paper<br>
                                   20" x 20"<br>
                                   2011<br>
                                 </p>
@@ -162,11 +162,11 @@
                         <!-- Image/Caption Begin-->
                         <div id="node120" class="picture" style="width: 400px;"><!-- change width here -->
                             <div class="captioning text2" style="width: 400px; height: 18px;">
-                                <div style="padding: 0 10px 0 0;">Source image from the NYTimes article</div>
+                                <div style="padding: 0 10px 0 0;">Source image from New York Times article</div>
                             </div>
                             <div> 
                                 <a class="lightbox" href="#forest02"> 
-                                    <img src="../Wight_Images/Forests/GWight_ForestsintheAgeofFishes_NYT_2011_S.jpg">
+                                    <img src="../Wight_Images/Forests/GWight_ForestsintheAgeofFishes_NYT_2011_S.jpg" name="forests-img">
                                 </a>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                         <!-- Large Image on Click Begin -->
                         <div class="lightbox-target" id="forest02">
                             <img src="../Wight_Images/Forests/GWight_ForestsintheAgeofFishes_NYT_2011_L.jpg"/>
-                            <a class="lightbox-close" href="#"></a>
+                            <a class="lightbox-close" href="#forests-img"></a>
                         </div>
                         <!-- Large Image on Click End -->
                         <div class="separator" style="float: left; width: 25px;">&nbsp;</div>
@@ -184,8 +184,9 @@
                 </div>
             </div>
         </div>
-        <!-- PROJECT DOCUMENTATION ENDS -->
+        </div>     <!-- PROJECT DOCUMENTATION ENDS -->
 
+                        
         <!-- SCROLL ARROW BEGIN -->
         <div id="mySidenav" class="sidenav" onclick="myFunction()">
             <a href="#" id="scroll">></a>
@@ -193,12 +194,11 @@
         <!-- <p id="demo" onclick="myFunction()">Click me.</p> -->
         <script>
             function myFunction() {
-                document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-                var elmnt = document.getElementById("body");
+                var elmnt = document.getElementById("scroll-container");
                 elmnt.scrollLeft += 100;
             }
         </script>
-        <!-- SCROLL ARROW END -->
+        <!-- SCROLL ARROW END —>
 
         <script type="text/javascript">do_statistics();</script>
 
