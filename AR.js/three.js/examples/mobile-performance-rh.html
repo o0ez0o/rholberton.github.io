@@ -145,10 +145,6 @@
     mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.01;
 	mesh.position.y	= 1
     arWorldRoot.add( mesh );
-    
-    onRenderFcts.push(function(){
-		mesh.rotation.z += 0.1
-	})
 	
 	var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
 	var material	= new THREE.MeshNormalMaterial(); 

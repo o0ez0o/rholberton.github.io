@@ -66,9 +66,12 @@
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.set( 100, 200, 300 );
 
-				controls = new THREE.OrbitControls( camera );
-				controls.target.set( 0, 100, 0 );
-				controls.update();
+//				controls = new THREE.OrbitControls( camera );
+//				controls.target.set( 0, 100, 0 );
+//				controls.update();
+                
+//                var camera = new THREE.Camera();
+//                scene.add(camera);
 
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xa0a0a0 );
@@ -89,21 +92,10 @@
 
 				// scene.add( new THREE.CameraHelper( light.shadow.camera ) );
 
-				// ground
-				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
-				mesh.rotation.x = - Math.PI / 2;
-				mesh.receiveShadow = true;
-				scene.add( mesh );
-
-				var grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
-				grid.material.opacity = 0.2;
-				grid.material.transparent = true;
-				scene.add( grid );
-
 				// model
 				var loader = new THREE.FBXLoader();
 				loader.load( '../../data/data/handGLoptB.fbx', function ( object ) {
-//object.scale (.1, .1, .1);
+        
 					object.mixer = new THREE.AnimationMixer( object );
 					mixers.push( object.mixer );
 
