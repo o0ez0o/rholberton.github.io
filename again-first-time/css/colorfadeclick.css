@@ -16,6 +16,12 @@
 }
 
 .button {
+    background-color: white;
+    border: none;
     position: absolute;
     top: 50%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 42px;
 }
