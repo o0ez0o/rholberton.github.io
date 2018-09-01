@@ -13,7 +13,7 @@
     
 <div class="sample">
     <div class="wrapper">
-    <button class="button">SEND</button>
+    <div class="center">SEND</div>
     </div>
 </div>   
     
@@ -24,7 +24,6 @@
 <script>
         
     $(document).ready(function() {
-
       $('.sample').click(function() {
         $(this).animate({
           backgroundColor: "white"
@@ -34,36 +33,22 @@
           }, 1000).dequeue();
         });
           
-        $('.button').animate({
+        $('.center').animate({
           backgroundColor: "white"
         }, 1000).delay(2000).queue(function() {
-          $('.button').animate({
+          $('.center').animate({
             backgroundColor: "black"
           }, 1000).dequeue();
         });
-
-
         var el = document.documentElement,
         rfs = el.requestFullscreen
             || el.webkitRequestFullScreen
             || el.mozRequestFullScreen
             || el.msRequestFullscreen 
         ;
-
         rfs.call(el);
-
       });
-
     });
     
-    $whitelist = array(
-        '10.0.0.252',
-        '::1'
-    );
-
-    if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
-        // not valid
-    }
 </script>
-    
-    
+ 

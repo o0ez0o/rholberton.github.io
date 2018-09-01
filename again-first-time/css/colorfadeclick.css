@@ -12,16 +12,22 @@
 .wrapper {
     align-items: center;
     text-align: center;
+    padding-left: 50%;
 }
 
-.button {
+
+
+.center {
     background-color: black;
     color: #fff;
     border: none;
     position: absolute;
+    width: 200px;
+    height: 50px;
     top: 50%;
-    padding: 15px 32px;
+    left: 50%;
+    margin-left: -100px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
     text-align: center;
-    text-decoration: none;
     font-size: 42px;
 }
