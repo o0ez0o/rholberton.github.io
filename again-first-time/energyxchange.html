@@ -9,18 +9,23 @@
 </head>
     
 <body>
+<?php include("/counter.php");?>   
+    
 <div class="sample">
     <div class="wrapper">
     <button class="button">SEND</button>
     </div>
-</div>
+</div>   
+    
 </body>
     
+
+    
 <script>
+        
     $(document).ready(function() {
 
       $('.sample').click(function() {
-
         $(this).animate({
           backgroundColor: "white"
         }, 1000).delay(2000).queue(function() {
@@ -28,6 +33,15 @@
             backgroundColor: "black"
           }, 1000).dequeue();
         });
+          
+        $('.button').animate({
+          backgroundColor: "white"
+        }, 1000).delay(2000).queue(function() {
+          $('.button').animate({
+            backgroundColor: "black"
+          }, 1000).dequeue();
+        });
+
 
         var el = document.documentElement,
         rfs = el.requestFullscreen
@@ -41,6 +55,15 @@
       });
 
     });
+    
+    $whitelist = array(
+        '10.0.0.252',
+        '::1'
+    );
+
+    if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+        // not valid
+    }
 </script>
     
     
