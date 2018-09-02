@@ -4,12 +4,6 @@
 * {
 	margin: 0;
 	padding: 0;
-        -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 a:link {
@@ -80,6 +74,12 @@ body {
   color: #fff;
   background-color: black;
   cursor: pointer
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .wrapper {
