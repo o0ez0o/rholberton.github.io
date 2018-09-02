@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <!-- three.js library -->
 <script src='vendor/three.js/build/three.min.js'></script>
@@ -127,6 +128,9 @@
         scene.add(markerRoot)
         var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
             type : 'pattern',
+            ////////////////////////////////////////////////////////////////////////////////
+            //   Add your custom image here and comment out existing file (hiro or kanji)
+            ////////////////////////////////////////////////////////////////////////////////
             patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
             // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
         })
@@ -142,16 +146,18 @@
             smoothedControls.update(markerRoot)
         })
         //////////////////////////////////////////////////////////////////////////////////
-        //		add an object in the scene
+        //		add objects in the scene
         //////////////////////////////////////////////////////////////////////////////////
         var arWorldRoot = smoothedRoot
-        // add a torus knot	
+        
+        // add a static cube
         var geometry	= new THREE.CubeGeometry(1,1,1);
         var material	= new THREE.MeshNormalMaterial({
             transparent : true,
             opacity: 0.5,
             side: THREE.DoubleSide
         }); 
+        // add a taurus with rotation
         var mesh	= new THREE.Mesh( geometry, material );
         mesh.position.y	= geometry.parameters.height/2
         arWorldRoot.add( mesh );
@@ -164,22 +170,22 @@
             mesh.rotation.x += 0.1
         })
         
-        		// model
-				var loader = new THREE.FBXLoader();
-				loader.load( '../../data/data/handGLoptB.fbx', function ( object ) {
-					object.mixer = new THREE.AnimationMixer( object );
-					mixers.push( object.mixer );
-					var action = object.mixer.clipAction( object.animations[ 0 ] );
-					action.play();
-					object.traverse( function ( child ) {
-						if ( child.isMesh ) {
-							child.castShadow = true;
-							child.receiveShadow = true;
-						}
-					} );
-                    object.scale.set(.02, .02, .02);
-					arWorldRoot.add( object );
-				} );
+        // add a fbx model with animation
+        var loader = new THREE.FBXLoader();
+        loader.load( '../../data/data/handGLoptB.fbx', function ( object ) {
+            object.mixer = new THREE.AnimationMixer( object );
+            mixers.push( object.mixer );
+            var action = object.mixer.clipAction( object.animations[ 0 ] );
+            action.play();
+            object.traverse( function ( child ) {
+                if ( child.isMesh ) {
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            } );
+            object.scale.set(.02, .02, .02);
+            arWorldRoot.add( object );
+        } );
         
         //////////FROM FBX IMPORT
         stats = new Stats();
