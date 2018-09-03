@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<!-- three.js library -->
+
+<!-- import the three.js library -->
 <script src='vendor/three.js/build/three.min.js'></script>
 <script src="vendor/three.js/examples/js/libs/stats.min.js"></script>
-<!-- ar.js -->
+
+<!-- import the ar.js library -->
 <script src="../build/ar.js"></script>
+
+<!-- sets the local directory (the code '../' navigates up one directory from exmples to three.js) -->
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
+    <!-- imports libraries to import fbx animations -->
     <script src="../build/three.js"></script>
 
     <script src="js/libs/inflate.min.js"></script>
@@ -18,7 +23,7 @@
     <script src="js/controls/OrbitControls.js"></script>
 
     <script src="js/Detector.js"></script>
-    <script src="js/libs/stats.min.js"></script>
+    <!--ALREADY IMPORTED-- <script src="js/libs/stats.min.js"></script> -->
     
     <script>
         
@@ -28,12 +33,10 @@
         var mixers = [];
         var stats;
     
-//    init();
-//    animate();
-    
         
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Init
+    //      sets up how the webpage will be diplayed (fullscreen)
 	//////////////////////////////////////////////////////////////////////////////////
         // init renderer
         var renderer	= new THREE.WebGLRenderer({
@@ -70,19 +73,22 @@
         //////////////////////////////////////////////////////////////////////////////////
         //		Initialize a basic camera
         //////////////////////////////////////////////////////////////////////////////////
-        // Create a camera
+        //      Create a camera
         camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
         scene.add(camera);
         ////////////////////////////////////////////////////////////////////////////////
-        //          handle arToolkitSource
+        //      handle arToolkitSource
+        //        source to use for analysis: points the code toward either a live video feed, a static image, or a video file
         ////////////////////////////////////////////////////////////////////////////////
         var arToolkitSource = new THREEx.ArToolkitSource({
-            // to read from the webcam 
+            // to read from the webcam (comment out line below if using static image or video file)
             sourceType : 'webcam',
-            // to read from an image
+            
+            // to read from an image uncomment two lines below (remove // at the beginning of each line)
             // sourceType : 'image',
             // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',		
-            // to read from a video
+            
+            // to read from a video uncomment two lines below (remove // at the beginning of each line)
             // sourceType : 'video',
             // sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',		
         })
@@ -122,7 +128,9 @@
             arToolkitContext.update( arToolkitSource.domElement )
         })
         ////////////////////////////////////////////////////////////////////////////////
-        //          Create a ArMarkerControls
+    //          Create a ArMarkerControls
+        //        Tutorial to make your own target image pattern: https://medium.com/arjs/how-to-create-your-own-marker-44becbec1105
+        //        More Help/Known problems with cutom images: https://github.com/jeromeetienne/AR.js/issues/366
         ////////////////////////////////////////////////////////////////////////////////
         var markerRoot = new THREE.Group
         scene.add(markerRoot)
@@ -134,7 +142,7 @@
             patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
             // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
         })
-        // build a smoothedControls
+        // build smoothedControls
         var smoothedRoot = new THREE.Group()
         scene.add(smoothedRoot)
         var smoothedControls = new THREEx.ArSmoothedControls(smoothedRoot, {
@@ -161,6 +169,7 @@
         mesh = new THREE.Mesh( geometry, material );
         mesh.position.y	= geometry.parameters.height/2
         arWorldRoot.add( mesh );
+        // end cube code
         
         // add a taurus with rotation
         geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
@@ -171,6 +180,7 @@
         onRenderFcts.push(function(){
             mesh.rotation.x += 0.1
         })
+        // end taurus code
         
         // add a fbx model with animation
         var loader = new THREE.FBXLoader();
@@ -188,6 +198,7 @@
             object.scale.set(.02, .02, .02);
             arWorldRoot.add( object );
         } );
+        //end fbx code
         
         //////////FROM FBX IMPORT
         stats = new Stats();
@@ -197,7 +208,6 @@
 	//		render the whole thing on the page
 	//////////////////////////////////////////////////////////////////////////////////
 	
-//    function animate(){
         var stats2 = new Stats();
         document.body.appendChild( stats2.dom );
         // render the scene
@@ -205,7 +215,7 @@
             renderer.render( scene, camera );
             stats2.update();
         })
-//}
+
         // run the rendering loop
         var lastTimeMsec= null
         requestAnimationFrame(function animate(nowMsec){
