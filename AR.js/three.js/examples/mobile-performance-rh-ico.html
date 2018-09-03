@@ -155,16 +155,13 @@
 //	onRenderFcts.push(function(){
 //		mesh.rotation.x += 0.1
 //	})
-        //add icosphere test from 3js playground
-        geometry = new THREE.IcosahedronGeometry(.3, 0);
-        material = new THREE.MeshNormalMaterial({
-            transparent : true,
-            opacity: 0.5,
-            side: THREE.DoubleSide
-        });
-        mesh = new THREE.Mesh(geometry, material);
-        mesh.position.y	= geometry.parameters.height/2
-        arWorldRoot.add(mesh);
+    
+    //add icosphere test from 3js playground
+    geometry = new THREE.IcosahedronGeometry(.3, 0);
+    var material	= new THREE.MeshNormalMaterial(); 
+    var mesh	= new THREE.Mesh( geometry, material );
+    mesh.position.y	= 0.5
+    arWorldRoot.add( mesh );
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
