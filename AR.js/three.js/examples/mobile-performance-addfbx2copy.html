@@ -155,6 +155,8 @@
         })
         //////////////////////////////////////////////////////////////////////////////////
         //		add objects in the scene
+        //      you can copy source code for simple shape from the three.js playground here: http://threejsplaygnd.brangerbriz.net/gui/
+        //      for more on using 3D models with AR.js and A-Frame see here: https://medium.com/@akashkuttappa/using-3d-models-with-ar-js-and-a-frame-84d462efe498
         //////////////////////////////////////////////////////////////////////////////////
         var arWorldRoot = smoothedRoot;
         var geometry, material, mesh;
@@ -168,10 +170,16 @@
         }); 
         mesh = new THREE.Mesh( geometry, material );
         mesh.position.y	= geometry.parameters.height/2
-        arWorldRoot.add( mesh );
+        arWorldRoot.add(mesh);
         // end cube code
         
-        // add a taurus with rotation
+        geometry = new THREE.IcosahedronGeometry(150, 0);
+        material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+        mesh = new THREE.Mesh(geometry, material);
+        mesh.position.y	= geometry.parameters.height/2
+        arWorldRoot.add(mesh);
+        
+        // add a taurus with rotation animation
         geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
         material = new THREE.MeshNormalMaterial(); 
         mesh = new THREE.Mesh( geometry, material );
