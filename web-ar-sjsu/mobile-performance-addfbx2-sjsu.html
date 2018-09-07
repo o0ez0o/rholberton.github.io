@@ -7,7 +7,7 @@
 <script src="vendor/three.js/examples/js/libs/stats.min.js"></script>
 
 <!-- import the ar.js library -->
-<script src="../build/ar.js"></script>
+<script src="build/ar.js"></script>
 
 <!-- sets the local directory (the code '../' navigates up one directory from exmples to three.js) -->
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
@@ -15,7 +15,7 @@
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
     <!-- imports libraries to import fbx animations -->
-    <script src="../build/three.js"></script>
+    <script src="build/three.js"></script>
 
     <script src="js/libs/inflate.min.js"></script>
     <script src="js/loaders/FBXLoader.js"></script>
@@ -111,7 +111,7 @@
         ////////////////////////////////////////////////////////////////////////////////
         // create atToolkitContext
         var arToolkitContext = new THREEx.ArToolkitContext({
-            cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
+            cameraParametersUrl: THREEx.ArToolkitContext.baseURL + 'data/data/camera_para.dat',
             detectionMode: 'mono',
             maxDetectionRate: 30,
             canvasWidth: 80*3,
@@ -139,8 +139,8 @@
             ////////////////////////////////////////////////////////////////////////////////
             //   Add your custom image here and comment out existing file (hiro or kanji)
             ////////////////////////////////////////////////////////////////////////////////
-            patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
-            // patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
+            patternUrl : THREEx.ArToolkitContext.baseURL + 'data/data/patt.hiro'
+            // patternUrl : THREEx.ArToolkitContext.baseURL + 'data/data/patt.kanji'
         })
         // build smoothedControls
         var smoothedRoot = new THREE.Group()
@@ -194,7 +194,7 @@
         
         // add a fbx model with animation
         var loader = new THREE.FBXLoader();
-        loader.load( '../../data/data/handGLoptB.fbx', function ( object ) {
+        loader.load( 'data/data/handGLoptB.fbx', function ( object ) {
             object.mixer = new THREE.AnimationMixer( object );
             mixers.push( object.mixer );
             var action = object.mixer.clipAction( object.animations[ 0 ] );
