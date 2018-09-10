@@ -1,6 +1,9 @@
 
 <!DOCTYPE html>
 
+<title>AR on the web for SJSU</title>
+<meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 <!-- import the three.js library -->
@@ -17,6 +20,8 @@
 
     <!-- imports libraries to import fbx animations -->
     <script src="../build/three.js"></script>
+    
+    <script src="js/loaders/OBJLoader.js"></script>
 
     <script src="js/libs/inflate.min.js"></script>
     <script src="js/loaders/FBXLoader.js"></script>
@@ -211,6 +216,55 @@
 //            arWorldRoot.add( object );
 //        } );
 //        //end fbx code
+        
+        
+        //add obj model (static)
+        // obj texture
+
+        var manager = new THREE.LoadingManager();
+        manager.onProgress = function ( item, loaded, total ) {
+
+            console.log( item, loaded, total );
+
+        };
+
+        var textureLoader = new THREE.TextureLoader( manager );
+        var texture = textureLoader.load( '../examples/textures/UV_Grid_Sm.jpg' );
+
+        // obj model
+        var onProgress = function ( xhr ) {
+            if ( xhr.lengthComputable ) {
+                var percentComplete = xhr.loaded / xhr.total * 100;
+                console.log( Math.round(percentComplete, 2) + '% downloaded' );
+            }
+        };
+
+        var onError = function ( xhr ) {
+        };
+
+        var loader = new THREE.OBJLoader( manager );
+        loader.load( '../examples/models/obj/male02/male02.obj', function ( object ) {
+
+            object.traverse( function ( child ) {
+
+                if ( child instanceof THREE.Mesh ) {
+
+                    child.material.map = texture;
+
+                }
+
+            } );
+
+//					object.position.y = - 95;
+//					scene.add( object );
+            object.scale.set(.02, .02, .02);
+            arWorldRoot.add( object );
+
+        }, onProgress, onError );
+
+        //
+
+        
         
         //////////FROM FBX IMPORT
         stats = new Stats();
